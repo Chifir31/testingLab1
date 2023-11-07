@@ -19,9 +19,22 @@ TEST(findRootQuadraticEquation, DPositive) {
 
 TEST(findRootQuadraticEquation, DZero) {
     double *res = findRootQuadraticEquation(16, -8, 1);
-    ASSERT_EQ(res[0], res[1]);
+    ASSERT_DOUBLE_EQ(res[0], res[1]);
     ASSERT_EQ(res[0], 0.25L);
 }
+
+TEST(findRootQuadraticEquation, aZero) {
+    double *res = findRootQuadraticEquation(0, -8, 1);
+    ASSERT_EQ(isnan(res[0]), 1);
+    ASSERT_EQ(isnan(res[1]), 1);
+}
+
+TEST(findRootQuadraticEquation, abZero) {
+    double *res = findRootQuadraticEquation(0, 0, 1);
+    ASSERT_EQ(isnan(res[0]), 1);
+    ASSERT_EQ(isnan(res[1]), 1);
+}
+
 
 TEST(findRootQuadraticEquation, DNegative) {
     double *res = findRootQuadraticEquation(9, -6, 2);
