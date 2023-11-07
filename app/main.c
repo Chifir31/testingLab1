@@ -52,7 +52,7 @@ int main() {
 
         double *result = findRootQuadraticEquation(a, b, c);
         int sum = (int) (abs(result[0]) + abs(result[1]));
-        printf("\nИнтересный факт! В последовательности Фибоначчи %d элемент это %d\n", sum, fibonachi(sum + 1));
+        printf("\nИнтересный факт! В последовательности Фибоначчи %d элемент это %d\n", sum+1, fibonachi(sum));
     }
     printf("! FREEDOM !\n");
 }
