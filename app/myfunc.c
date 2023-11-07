@@ -40,22 +40,20 @@ void printStdoutMessages() {
 
 double *findRootQuadraticEquation(double a, double b, double c){
     double *roots = malloc(2*sizeof(int));
+    roots[0] = NAN;
+    roots[1] = NAN;
 
     if (a == 0){
-    	roots[0] = NAN;
-        roots[1] = NAN;
         return roots;
-    }
-    
-    double D;
-    D = b * b - 4 * a * c;
-    if (D >= 0){
-        roots[0] = (-b - sqrt(D)) / (2*a);
-        roots[1] = (-b + sqrt(D)) / (2*a);
     } else {
-        roots[0] = NAN;
-        roots[1] = NAN;
+    
+    	double D;
+   	D = b * b - 4 * a * c;
+    	if (D >= 0){
+        	roots[0] = (-b - sqrt(D)) / (2*a);
+        	roots[1] = (-b + sqrt(D)) / (2*a);
+    	} 
+    	printf("x1 = %lf, x2 = %lf \n", roots[0], roots[1]);
     }
-    printf("x1 = %lf, x2 = %lf \n", roots[0], roots[1]);
     return roots;
 }
