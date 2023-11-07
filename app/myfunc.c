@@ -39,14 +39,11 @@ void printStdoutMessages() {
 }
 
 double *findRootQuadraticEquation(double a, double b, double c){
-    double *roots = malloc(2*sizeof(int));
+    double *roots = malloc(2*sizeof(double));
     roots[0] = NAN;
     roots[1] = NAN;
 
-    if (a == 0){
-        return roots;
-    } else {
-    
+    if (a != 0){
     	double D;
    	D = b * b - 4 * a * c;
     	if (D >= 0){
